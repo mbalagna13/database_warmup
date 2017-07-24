@@ -5,7 +5,7 @@ exports.up = function(knex, Promise) {
       table.increments('id').primary();
       table.string('name').notNullable();
       table.string('type').notNullable();
-      table.interger('user_id').notNullable();
+      table.integer('user_id').notNullable();
     })
 };
 
