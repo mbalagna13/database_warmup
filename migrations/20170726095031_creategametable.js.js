@@ -5,10 +5,10 @@ exports.up = function(knex, Promise) {
       table.increments('id').primary();
       table.string('name').notNullable();
       table.string('type').notNullable();
-      table.foreign('user_id').references('user.id')
+      table.integer('persons_id').references('persons.id')
     })
 };
 
 exports.down = function(knex, Promise) {
-
+  return knex.schema.dropTable('games')
 };
