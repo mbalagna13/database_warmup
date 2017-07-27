@@ -74,4 +74,23 @@ router.get('/', (req, res, next) => {
   })
 })
 
+router.get('/:id', (req, res, next) => {
+  queries.getUserById(req.params.id).then(response => {
+    res.json(response)
+  })
+})
+
+router.delete('/:id', (req, res, next) => {
+  queries.deleteUserbyid(req.params.id).then(response => {
+    res.json(response);
+
+  })
+})
+
+router.put('/:id', (req, res, next) => {
+  queries.editUserInfo(req.params.id, req.body).then(persons => {
+    res.json(persons[0])
+  })
+})
+
 module.exports = router;
